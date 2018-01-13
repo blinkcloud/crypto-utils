@@ -1,0 +1,19 @@
+{
+  "name": "crypto-utils",
+  "version": "0.0.1",
+  "description": "microservice for crypto-research group",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ccxt": "^1.10.686",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.2",
+    "querystring": "^0.2.0",
+    "request": "^2.83.0"
+  }
+}
