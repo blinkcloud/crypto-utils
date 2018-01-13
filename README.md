@@ -50,7 +50,7 @@ This can be deployed on Azure, AWS, Heroku, etc.
 
 ## Built With
 
-* [Node JS](https://nodejs.org/en/ 
+* [Node JS](https://nodejs.org/en/ )
 
 ## Contributing
 
