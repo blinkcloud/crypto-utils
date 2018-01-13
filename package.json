@@ -1,6 +1,6 @@
 {
   "name": "crypto-utils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "microservice for crypto-research group",
   "main": "app.js",
   "scripts": {
