@@ -25,17 +25,11 @@ app.get('/', jParser, function (req, res) {
 
 //send in the currency pairs for comparison, e.g., /compare/comp1=ETH%2FUSD&comp2=NEO%2FUSD
 app.get('/compare/:querystring', jParser, function (req, res) {
-
-    console.log(req.params.querystring);
     let q = querystring.parse(req.params.querystring);
-    console.log(q);
     (async () => {
         let comp1 = await cmc.fetchTicker(q.comp1);
-        console.log(comp1);
-
         let comp2 = await cmc.fetchTicker(q.comp2);
-        console.log(comp2);
-
+        
         res.status(200).json({
             status: 'success',
             qs: req.params.querystring,
@@ -43,7 +37,6 @@ app.get('/compare/:querystring', jParser, function (req, res) {
             initialCurrency: q.comp1,
             comparisonCurrency: q.comp2,
             comparison: compare(comp1.info, comp2.info),
-    
         });
     })();
 });
