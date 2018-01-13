@@ -33,6 +33,17 @@ A successful response will look like:
 {"status":"success","qs":"comp1=ETH/USD&comp2=NEO/USD","parsed":{"comp1":"ETH/USD","comp2":"NEO/USD"},"initialCurrency":"ETH/USD","comparisonCurrency":"NEO/USD","comparison":{"marketCap":14.893826902972076,"price":9.984416056353776,"volume24":12.786496606756158,"circSupply":1.4917073538461538,"totalSupply":0.96960978,"mcRank":-9}}
 ```
 
+Fields calculated:
+
+```
+    marketCap   = curr1.market_cap_usd      /   curr2.market_cap_usd;
+    price       = curr1.price_usd           /   curr2.price_usd;
+    volume24    = curr1['24h_volume_usd']   /   curr2['24h_volume_usd'];
+    circSupply  = curr1.available_supply    /   curr2.available_supply;
+    totalSupply = curr1.total_supply        /   curr2.total_supply;
+    mcRank      = curr1.rank                -   curr2.rank;
+```
+
 ## Deployment
 
 This can be deployed on Azure, AWS, Heroku, etc. 
@@ -56,3 +67,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## References
+
+* [ccxt](https://www.npmjs.com/package/ccxt)
+* [cmc-api](https://coinmarketcap.com/api/)
