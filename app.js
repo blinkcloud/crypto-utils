@@ -1,7 +1,7 @@
 // author: Jonathan S. Luzader
 // Copywrite 2018, blink.cloud, LLC. 
 // license: MIT License
-// purpose: small utility for basic compairsons of cryptocurrencies using coinmarketcap 
+// purpose: small utility for basic comparisons of cryptocurrencies using coinmarketcap 
 
 const   express     = require('express'),
         app         = express(),
@@ -46,8 +46,6 @@ app.get('/compare/:querystring', jParser, function (req, res) {
     
         });
     })();
-    
-
 });
 
 let server = app.listen(3400, function(){
@@ -66,7 +64,7 @@ function compare (curr1, curr2) {
 
     marketCap   = curr1.market_cap_usd      /   curr2.market_cap_usd;
     price       = curr1.price_usd           /   curr2.price_usd;
-    volume24    = curr1['24h_volume_usd']      /   curr2['24h_volume_usd'];
+    volume24    = curr1['24h_volume_usd']   /   curr2['24h_volume_usd'];
     circSupply  = curr1.available_supply    /   curr2.available_supply;
     totalSupply = curr1.total_supply        /   curr2.total_supply;
     mcRank      = curr1.rank                -   curr2.rank;
